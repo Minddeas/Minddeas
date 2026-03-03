@@ -53,7 +53,7 @@ export function Process() {
         </div>
 
         {steps.map((step, i) => (
-          <article key={step.id} className="group/col relative flex flex-1 flex-col border-b lg:border-b-0 lg:border-r border-border-main bg-white p-16 transition-all duration-700 hover:flex-[3] hover:bg-bg-light group-hover/container:opacity-40 hover:!opacity-100 overflow-hidden">
+          <article key={step.id} className="group/col relative flex flex-1 flex-col lg:border-r border-border-main bg-white p-16 transition-all duration-700 hover:flex-[3] hover:bg-bg-light group-hover/container:opacity-40 hover:!opacity-100 overflow-hidden">
             <div className="relative z-10 flex w-full items-start justify-between mb-12">
               <span className="font-mono text-[12px] font-bold text-text-muted group-hover/col:text-primary transition-colors tracking-[0.3em] uppercase">STEP_{step.id}</span>
               <ArrowRight className="w-8 h-8 text-primary opacity-0 -translate-x-6 transition-all duration-500 group-hover/col:opacity-100 group-hover/col:translate-x-0" />

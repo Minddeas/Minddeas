@@ -7,7 +7,7 @@ export function Navbar() {
         <img src="/images/hf_20260302_190926_0216cdcf-770b-434b-a9e7-c925ef702cc4.png" alt="Minddeas Logo" className="h-12 w-auto" />
       </div>
       <nav className="hidden md:flex items-center gap-12">
-        {['ABOUT', 'SERVICES', 'METHODOLOGY', 'CONTACT'].map((item) => (
+        {['ABOUT', 'METHODOLOGY', 'CONTACT'].map((item) => (
           <a key={item} href={`#${item.toLowerCase()}`} className="relative font-display font-bold text-[14px] uppercase tracking-[0.2em] text-text-main hover:text-primary transition-all group">
             {item}
             <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-primary transition-all group-hover:w-full"></span>

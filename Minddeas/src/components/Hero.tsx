@@ -1,9 +1,20 @@
 import { ArrowRight } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { useRef } from 'react';
 
 export function Hero() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const scrollY = useTransform(scrollYProgress, [0, 1], [0, 500]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
   return (
-    <section id="about" className="flex-1 flex flex-col md:flex-row w-full overflow-hidden relative border-b border-border-main min-h-[calc(100vh-70px)]">
-      <div className="w-full md:w-[55%] flex flex-col justify-center px-6 md:px-24 py-20 md:py-32 border-b md:border-b-0 md:border-r border-border-main relative bg-white">
+    <section ref={containerRef} id="about" className="flex-1 flex flex-col md:flex-row w-full overflow-hidden relative border-b border-border-main min-h-[calc(100vh-70px)]">
+      <div className="w-full md:w-[55%] flex flex-col justify-center px-6 md:px-24 py-20 md:py-32 border-border-main relative bg-white">
         <div className="absolute top-12 left-6 md:left-24 font-mono text-[11px] text-text-muted uppercase tracking-widest">
           // SYSTEM V.1.0
         </div>
@@ -34,16 +45,64 @@ export function Hero() {
       <div className="w-full md:w-[45%] bg-bg-light relative flex items-center justify-center min-h-[500px] md:min-h-auto overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="relative w-full h-full p-20 flex items-center justify-center">
-          <div className="grid grid-cols-4 grid-rows-4 gap-px bg-border-main w-full max-w-[480px] aspect-square border border-border-main shadow-[30px_30px_0px_0px_rgba(244,162,32,0.1)] transition-transform hover:scale-105 duration-700">
-            {[...Array(16)].map((_, i) => (
-              <div key={i} className={`bg-white transition-all duration-300 ${[1, 5, 9, 13, 2, 6, 14].includes(i) ? 'bg-primary/90' : i === 4 || i === 8 || i === 12 ? 'bg-gray-200' : 'hover:bg-primary/10'}`}></div>
-            ))}
-          </div>
+          <motion.div 
+            style={{ y: scrollY, opacity }}
+            className="relative w-full max-w-[480px] aspect-square"
+          >
+            {[...Array(24)].map((_, i) => {
+              const size = 60 + Math.random() * 40;
+              const isPrimary = i % 3 === 0;
+              const isGray = i % 3 === 1;
+              
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ 
+                    opacity: 0, 
+                    scale: 0,
+                    x: Math.random() * 400 - 200,
+                    y: Math.random() * 400 - 200,
+                    rotate: Math.random() * 360
+                  }}
+                  animate={{ 
+                    opacity: 0.6, 
+                    scale: 1,
+                    x: [Math.random() * 400 - 200, Math.random() * 400 - 200, Math.random() * 400 - 200],
+                    y: [Math.random() * 400 - 200, Math.random() * 400 - 200, Math.random() * 400 - 200],
+                    rotate: [Math.random() * 360, Math.random() * 360, Math.random() * 360],
+                  }}
+                  transition={{ 
+                    opacity: { duration: 1 },
+                    scale: { duration: 1 },
+                    x: { duration: 20 + Math.random() * 20, repeat: Infinity, ease: "linear" },
+                    y: { duration: 20 + Math.random() * 20, repeat: Infinity, ease: "linear" },
+                    rotate: { duration: 20 + Math.random() * 20, repeat: Infinity, ease: "linear" },
+                  }}
+                  whileHover={{ 
+                    scale: 1.2, 
+                    opacity: 1, 
+                    zIndex: 20,
+                    backgroundColor: isPrimary ? 'rgba(244, 162, 32, 1)' : 'rgba(255, 255, 255, 1)'
+                  }}
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    width: size,
+                    height: size,
+                    marginTop: -size / 2,
+                    marginLeft: -size / 2,
+                  }}
+                  className={`border border-border-main shadow-xl transition-colors duration-500 cursor-none ${isPrimary ? 'bg-primary/40' : isGray ? 'bg-gray-200/40' : 'bg-white/40'}`}
+                />
+              );
+            })}
+          </motion.div>
           <div className="absolute top-16 right-16 font-mono text-[11px] text-primary border border-primary px-4 py-2 bg-white font-bold tracking-[0.2em] shadow-lg">
-            PROCESS_INIT()
+            SYSTEM_STATUS: DISORGANIZED
           </div>
           <div className="absolute bottom-20 left-16 font-mono text-[11px] text-text-main border border-border-main px-4 py-2 bg-white font-bold tracking-[0.2em] shadow-lg">
-            DATA_FLOW: 100%
+            CHAOS_INDEX: 98.4%
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Stats } from './components/Stats';
-import { Services } from './components/Services';
 import { Process } from './components/Process';
 import { Contact } from './components/Contact';
 
@@ -13,7 +12,6 @@ export default function App() {
         <main className="flex-1 flex flex-col w-full">
           <Hero />
           <Stats />
-          <Services />
           <Process />
           <Contact />
         </main>

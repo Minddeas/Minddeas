@@ -1,18 +1,10 @@
-import { Mail, Phone, MapPin, Share2, ArrowRight, ArrowUp, LayoutGrid, Check } from 'lucide-react';
+import { Mail, Phone, MapPin, Share2, ArrowRight, ArrowUp, Check } from 'lucide-react';
 
 export function Contact() {
   return (
     <section id="contact" className="w-full flex flex-col bg-bg-light">
-      <div className="w-full flex items-center justify-between px-6 md:px-16 py-10 border-b border-border-main bg-white">
-        <div className="flex items-center gap-4">
-          <LayoutGrid className="text-primary w-8 h-8" />
-          <span className="font-display font-bold text-2xl tracking-tighter text-text-main uppercase">MINDDEAS_TERMINAL</span>
-        </div>
-        <span className="font-mono text-[12px] text-text-muted uppercase tracking-[0.3em] font-bold">SYS.STATUS: <span className="text-primary">ONLINE</span></span>
-      </div>
-
       <div className="flex flex-col lg:flex-row w-full border-b border-border-main min-h-[800px]">
-        <div className="w-full lg:w-1/2 flex flex-col border-b lg:border-b-0 lg:border-r border-border-main bg-white">
+        <div className="w-full lg:w-1/2 flex flex-col lg:border-r border-border-main bg-white">
           <div className="p-12 md:p-24 lg:p-32 flex-1 flex flex-col justify-center bg-bg-light relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 -mr-40 -mt-40 rounded-full"></div>
             <div className="bg-text-main text-white font-mono text-[12px] font-bold uppercase tracking-[0.4em] px-6 py-2 w-fit mb-12 relative z-10">
@@ -114,14 +106,14 @@ export function Contact() {
         </div>
       </div>
 
-      <footer className="w-full grid grid-cols-1 md:grid-cols-4 bg-white border-b border-border-main">
-        <div className="p-12 border-b md:border-b-0 md:border-r border-border-main flex items-center justify-center group hover:bg-bg-light transition-colors">
+      <footer className="w-full grid grid-cols-1 md:grid-cols-4 bg-white border-t border-border-main">
+        <div className="p-12 flex items-center justify-center group hover:bg-bg-light transition-colors">
           <span className="font-mono text-[12px] text-text-muted uppercase tracking-[0.3em] font-bold group-hover:text-text-main transition-colors">MINDDEAS © 2026</span>
         </div>
-        <div className="p-12 border-b md:border-b-0 md:border-r border-border-main flex items-center justify-center group hover:bg-bg-light transition-colors cursor-pointer">
+        <div className="p-12 flex items-center justify-center group hover:bg-bg-light transition-colors cursor-pointer">
           <span className="font-mono text-[12px] text-text-muted uppercase tracking-[0.3em] font-bold group-hover:text-text-main transition-colors">PRIVACY_PROTOCOL</span>
         </div>
-        <div className="p-12 border-b md:border-b-0 md:border-r border-border-main flex items-center justify-center group hover:bg-bg-light transition-colors cursor-pointer">
+        <div className="p-12 flex items-center justify-center group hover:bg-bg-light transition-colors cursor-pointer">
           <span className="font-mono text-[12px] text-text-muted uppercase tracking-[0.3em] font-bold group-hover:text-text-main transition-colors">TERMS_OF_SERVICE</span>
         </div>
         <div className="p-12 flex items-center justify-center group hover:bg-bg-light transition-colors cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
