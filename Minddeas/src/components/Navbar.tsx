@@ -4,7 +4,7 @@ export function Navbar() {
   return (
     <header className="h-[90px] w-full flex items-center justify-between px-6 md:px-16 border-b border-border-main sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
       <div className="flex items-center gap-4">
-        <img src="/images/hf_20260302_190926_0216cdcf-770b-434b-a9e7-c925ef702cc4.png" alt="Minddeas Logo" className="h-12 w-auto" />
+        <img src="/images/logo.png" alt="Minddeas Logo" className="h-12 w-auto" />
       </div>
       <nav className="hidden md:flex items-center gap-12">
         {['ABOUT', 'METHODOLOGY', 'CONTACT'].map((item) => (
