@@ -14,37 +14,37 @@ export function Hero() {
 
   return (
     <section ref={containerRef} id="about" className="flex-1 flex flex-col md:flex-row w-full overflow-hidden relative border-b border-border-main min-h-[calc(100vh-70px)]">
-      <div className="w-full md:w-[55%] flex flex-col justify-center px-6 md:px-24 py-20 md:py-32 border-border-main relative bg-white">
+      <div className="w-full md:w-[55%] flex flex-col justify-center px-5 sm:px-6 md:px-16 lg:px-24 py-16 sm:py-20 md:py-24 lg:py-32 border-border-main relative bg-white">
         <div className="absolute top-12 left-6 md:left-24 font-mono text-[11px] text-text-muted uppercase tracking-widest">
           // SYSTEM V.1.0
         </div>
-        <div className="flex flex-col gap-8 max-w-3xl z-10">
-          <h2 className="font-display font-bold text-6xl md:text-[92px] lg:text-[110px] leading-[0.85] tracking-tighter text-text-main">
+        <div className="flex flex-col gap-6 sm:gap-8 max-w-3xl z-10">
+          <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-[74px] lg:text-[96px] xl:text-[110px] leading-[0.9] md:leading-[0.85] tracking-tight text-text-main break-words">
             Logic Applied to <br />
             <span className="text-primary">Real Results.</span>
           </h2>
           <div className="flex flex-col gap-6">
-            <p className="font-body text-text-main/80 text-xl md:text-2xl lg:text-3xl max-w-xl leading-relaxed border-l-2 border-primary pl-10">
+            <p className="font-body text-text-main/80 text-base sm:text-lg md:text-2xl lg:text-3xl max-w-xl leading-relaxed border-l-2 border-primary pl-4 sm:pl-6 md:pl-10">
               Data-driven business consulting, not guesswork. We structure corporate chaos.
             </p>
-            <div className="pt-10">
-              <button className="bg-primary text-white h-20 px-16 text-[16px] font-display font-bold uppercase tracking-[0.2em] flex items-center gap-6 w-fit group hover:bg-text-main transition-all duration-300 shadow-xl shadow-primary/10">
-                <span>START DIAGNOSTIC</span>
-                <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform" />
+            <div className="pt-6 sm:pt-8 md:pt-10">
+              <button className="bg-primary text-white h-14 sm:h-16 md:h-20 px-6 sm:px-8 md:px-16 text-[11px] sm:text-[12px] md:text-[16px] font-display font-bold uppercase tracking-[0.12em] md:tracking-[0.2em] flex items-center gap-3 sm:gap-4 md:gap-6 w-fit group hover:bg-text-main transition-all duration-300 shadow-xl shadow-primary/10">
+                <span className="whitespace-normal text-left">START DIAGNOSTIC</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-7 md:h-7 group-hover:translate-x-2 transition-transform" />
               </button>
             </div>
           </div>
         </div>
-        <div className="absolute bottom-12 left-6 md:left-24 flex gap-16 font-mono text-[12px] text-text-muted uppercase tracking-widest">
+        <div className="mt-8 md:mt-0 flex flex-wrap gap-4 sm:gap-8 md:gap-16 font-mono text-[11px] md:text-[12px] text-text-muted uppercase tracking-[0.2em] md:tracking-widest md:absolute md:bottom-12 md:left-6 lg:left-24">
           <span className="opacity-50 font-bold">X: 192.44</span>
           <span className="opacity-50 font-bold">Y: 04.21</span>
           <span className="text-primary font-bold">STATUS: ONLINE</span>
         </div>
       </div>
       
-      <div className="w-full md:w-[45%] bg-bg-light relative flex items-center justify-center min-h-[500px] md:min-h-auto overflow-hidden">
+      <div className="w-full md:w-[45%] bg-bg-light relative flex items-center justify-center min-h-[420px] sm:min-h-[500px] md:min-h-auto overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="relative w-full h-full p-20 flex items-center justify-center">
+        <div className="relative w-full h-full p-6 sm:p-10 md:p-16 lg:p-20 flex items-center justify-center">
           <motion.div 
             style={{ y: scrollY, opacity }}
             className="relative w-full max-w-[480px] aspect-square"
@@ -98,10 +98,10 @@ export function Hero() {
               );
             })}
           </motion.div>
-          <div className="absolute top-16 right-16 font-mono text-[11px] text-primary border border-primary px-4 py-2 bg-white font-bold tracking-[0.2em] shadow-lg">
+          <div className="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-10 md:right-10 lg:top-16 lg:right-16 font-mono text-[9px] sm:text-[10px] md:text-[11px] text-primary border border-primary px-2 sm:px-3 md:px-4 py-1.5 md:py-2 bg-white font-bold tracking-[0.12em] md:tracking-[0.2em] shadow-lg max-w-[80%] truncate">
             SYSTEM_STATUS: DISORGANIZED
           </div>
-          <div className="absolute bottom-20 left-16 font-mono text-[11px] text-text-main border border-border-main px-4 py-2 bg-white font-bold tracking-[0.2em] shadow-lg">
+          <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-10 md:left-10 lg:bottom-20 lg:left-16 font-mono text-[9px] sm:text-[10px] md:text-[11px] text-text-main border border-border-main px-2 sm:px-3 md:px-4 py-1.5 md:py-2 bg-white font-bold tracking-[0.12em] md:tracking-[0.2em] shadow-lg max-w-[80%] truncate">
             CHAOS_INDEX: 98.4%
           </div>
         </div>

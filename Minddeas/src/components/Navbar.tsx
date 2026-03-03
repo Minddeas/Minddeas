@@ -2,9 +2,9 @@ import { Menu } from 'lucide-react';
 
 export function Navbar() {
   return (
-    <header className="h-[90px] w-full flex items-center justify-between px-6 md:px-16 border-b border-border-main sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
+    <header className="h-[72px] sm:h-[80px] md:h-[90px] w-full flex items-center justify-between px-4 sm:px-6 md:px-16 border-b border-border-main sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
       <div className="flex items-center gap-4">
-        <img src="/images/logo.png" alt="Minddeas Logo" className="h-12 w-auto" />
+        <img src="/images/logo.png" alt="Minddeas Logo" className="h-8 sm:h-10 md:h-12 w-auto" />
       </div>
       <nav className="hidden md:flex items-center gap-12">
         {['ABOUT', 'METHODOLOGY', 'CONTACT'].map((item) => (
@@ -18,7 +18,7 @@ export function Navbar() {
         START DIAGNOSTIC
       </button>
       <button className="md:hidden text-text-main">
-        <Menu className="w-8 h-8" />
+        <Menu className="w-7 h-7 sm:w-8 sm:h-8" />
       </button>
     </header>
   );
