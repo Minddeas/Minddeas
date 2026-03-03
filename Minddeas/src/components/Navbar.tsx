@@ -2,8 +2,9 @@ import { Menu } from 'lucide-react';
 
 export function Navbar() {
   return (
-    <header className="h-[72px] sm:h-[80px] md:h-[90px] w-full flex items-center justify-between px-4 sm:px-6 md:px-16 border-b border-border-main sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
-      <div className="flex items-center gap-4">
+    <header className="h-[72px] sm:h-[80px] md:h-[90px] w-full flex items-center justify-between pl-2 pr-4 sm:pl-3 sm:pr-6 md:pl-4 md:pr-16 border-b border-border-main sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
+      <div className="flex items-center gap-3">
+        <img src="/images/logo.png" alt="" className="h-8 sm:h-9 md:h-10 w-auto" aria-hidden />
         <span
           className="text-2xl sm:text-3xl md:text-4xl leading-none font-semibold tracking-tight select-none"
           style={{ fontFamily: '"Montserrat", sans-serif' }}
