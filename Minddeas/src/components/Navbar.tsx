@@ -4,7 +4,14 @@ export function Navbar() {
   return (
     <header className="h-[72px] sm:h-[80px] md:h-[90px] w-full flex items-center justify-between px-4 sm:px-6 md:px-16 border-b border-border-main sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
       <div className="flex items-center gap-4">
-        <img src="/images/logo.png" alt="Minddeas Logo" className="h-8 sm:h-10 md:h-12 w-auto" />
+        <span
+          className="text-2xl sm:text-3xl md:text-4xl leading-none font-semibold tracking-tight select-none"
+          style={{ fontFamily: '"Montserrat", sans-serif' }}
+          aria-label="Minddeas"
+        >
+          <span className="text-text-main">Mind</span>
+          <span className="text-primary">deas</span>
+        </span>
       </div>
       <nav className="hidden md:flex items-center gap-12">
         {['ABOUT', 'METHODOLOGY', 'CONTACT'].map((item) => (
