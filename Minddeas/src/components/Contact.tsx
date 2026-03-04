@@ -1,8 +1,17 @@
-import { useForm } from '@formspree/react';
+import { useEffect, useState } from 'react';
 import { Mail, Calendar, MapPin, Share2, ArrowRight, ArrowUp, Check } from 'lucide-react';
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/p/2949986910493211753/f/contactForm';
+
 export function Contact() {
-  const [state, handleSubmit] = useForm('contactForm');
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('success') === '1') {
+      setShowSuccess(true);
+      window.history.replaceState({}, '', window.location.pathname + '#contact');
+    }
+  }, []);
 
   return (
     <section id="contact" className="w-full flex flex-col bg-bg-light">
@@ -57,10 +66,12 @@ export function Contact() {
 
         <div className="w-full lg:w-1/2 p-6 sm:p-10 md:p-16 lg:p-24 xl:p-32 bg-white flex flex-col justify-center">
           <form
-            onSubmit={handleSubmit}
+            action={FORMSPREE_ENDPOINT}
+            method="POST"
             className="flex flex-col gap-12 max-w-4xl w-full mx-auto"
           >
             <input type="hidden" name="_subject" value="Novo contacto - Minddeas" />
+            <input type="hidden" name="_next" value={typeof window !== 'undefined' ? `${window.location.origin}${window.location.pathname}?success=1#contact` : ''} />
             <div className="flex flex-col gap-4">
               <label htmlFor="fullName" className="font-mono text-[12px] font-bold text-text-main uppercase tracking-[0.2em]">[01] FULL_NAME</label>
               <input id="fullName" type="text" name="fullName" placeholder="TYPE_HERE_" required className="w-full h-14 sm:h-16 md:h-20 border border-border-main bg-transparent px-4 sm:px-6 md:px-8 font-mono text-base md:text-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:opacity-20" />
@@ -98,20 +109,15 @@ export function Contact() {
               <label htmlFor="newsletter" className="font-body text-lg lg:text-xl text-text-muted leading-snug select-none cursor-pointer group-hover:text-text-main transition-colors font-medium">I agree to receive occasional market intelligence reports.</label>
             </div>
 
-            <button type="submit" disabled={state.submitting} className="w-full bg-primary text-white h-16 sm:h-20 md:h-24 font-display font-bold text-base sm:text-xl lg:text-3xl uppercase tracking-[0.12em] sm:tracking-[0.2em] lg:tracking-[0.4em] flex items-center justify-center gap-3 sm:gap-4 md:gap-6 hover:bg-text-main transition-all duration-500 mt-6 shadow-2xl shadow-primary/10 disabled:opacity-70 disabled:cursor-not-allowed">
-              <span className="break-words text-center">{state.submitting ? 'TRANSMITTING...' : 'TRANSMIT_DATA'}</span>
+            {showSuccess && (
+              <div className="p-6 border border-primary bg-primary/5 font-mono text-primary font-bold uppercase tracking-widest text-center">
+                TRANSMISSION_SUCCESSFUL // THANK_YOU
+              </div>
+            )}
+            <button type="submit" className="w-full bg-primary text-white h-16 sm:h-20 md:h-24 font-display font-bold text-base sm:text-xl lg:text-3xl uppercase tracking-[0.12em] sm:tracking-[0.2em] lg:tracking-[0.4em] flex items-center justify-center gap-3 sm:gap-4 md:gap-6 hover:bg-text-main transition-all duration-500 mt-6 shadow-2xl shadow-primary/10">
+              <span className="break-words text-center">TRANSMIT_DATA</span>
               <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 shrink-0" />
             </button>
-            {state.succeeded && (
-              <p className="font-mono text-sm text-primary font-bold uppercase tracking-widest text-center -mt-6">
-                TRANSMISSION_SUCCESSFUL // THANK_YOU
-              </p>
-            )}
-            {state.errors?.length ? (
-              <p className="font-mono text-sm text-red-600 font-bold uppercase tracking-widest text-center -mt-6">
-                TRANSMISSION_FAILED // TRY_AGAIN
-              </p>
-            ) : null}
 
             <div className="w-full border-t border-dashed border-border-main pt-10 mt-10 text-center">
               <span className="font-mono text-[10px] sm:text-[12px] text-text-muted uppercase tracking-[0.12em] sm:tracking-[0.25em] md:tracking-[0.4em] font-bold opacity-40 break-words">
