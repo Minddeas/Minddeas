@@ -6,7 +6,7 @@ export function Contact() {
       <div className="flex flex-col lg:flex-row w-full border-b border-border-main min-h-[760px]">
         <div className="w-full lg:w-1/2 flex flex-col lg:border-r border-border-main bg-white">
           <div className="p-6 sm:p-10 md:p-16 lg:p-24 xl:p-32 flex-1 flex flex-col justify-center bg-bg-light relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 -mr-40 -mt-40 rounded-full"></div>
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 -mr-40 -mt-40 rotate-12"></div>
             <div className="bg-text-main text-white font-mono text-[12px] font-bold uppercase tracking-[0.4em] px-6 py-2 w-fit mb-12 relative z-10">
               // SECURE_CONNECTION
             </div>

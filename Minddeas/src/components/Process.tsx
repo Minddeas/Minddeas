@@ -84,18 +84,15 @@ export function Process() {
         ))}
       </div>
 
-      <div className="grid w-full grid-cols-1 lg:grid-cols-2">
-        <div className="flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-border-main p-16 lg:p-24 bg-white">
-          <span className="font-mono text-[12px] uppercase tracking-[0.4em] text-text-muted font-bold">SYSTEM STATUS</span>
-          <div className="mt-6 flex items-center gap-4">
-            <div className="w-3.5 h-3.5 animate-pulse bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)]"></div>
-            <span className="font-display text-2xl font-bold text-text-main tracking-tight uppercase">Operational • V.4.0</span>
-          </div>
-        </div>
-        <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="group relative flex h-36 sm:h-40 lg:h-48 cursor-pointer items-center justify-between overflow-hidden bg-text-main p-6 sm:p-10 lg:p-24 transition-all duration-700 hover:bg-primary gap-4">
-          <span className="font-display text-lg sm:text-2xl lg:text-4xl font-bold text-white transition-colors tracking-[0.12em] sm:tracking-[0.2em] lg:tracking-[0.3em] uppercase relative z-10 text-left break-words">START DIAGNOSTIC</span>
-          <ArrowRight className="w-8 h-8 sm:w-10 sm:h-10 lg:w-16 lg:h-16 text-white transition-all duration-700 group-hover:-rotate-45 relative z-10 shrink-0" />
-          <div className="absolute inset-0 z-0 opacity-10 bg-grid-pattern group-hover:opacity-30 transition-all duration-700 scale-150 group-hover:scale-100"></div>
+      <div className="w-full flex flex-col md:flex-row justify-between items-center px-6 sm:px-10 md:px-16 py-8 md:py-10 bg-bg-light gap-4 md:gap-0">
+        <span className="font-mono text-[11px] md:text-[12px] text-text-muted uppercase tracking-[0.15em] md:tracking-widest mb-0 font-bold opacity-60 text-center md:text-left break-words">
+          COMMUNICATION NODE ACTIVE // READY FOR INPUT
+        </span>
+        <button 
+          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          className="font-display font-bold text-[11px] sm:text-[12px] uppercase tracking-[0.12em] sm:tracking-[0.2em] md:tracking-[0.3em] text-text-main flex items-center gap-3 md:gap-4 hover:text-primary transition-all group text-center"
+        >
+          INITIATE CONTACT <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
         </button>
       </div>
     </section>
