@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Share2, ArrowRight, ArrowUp, Check } from 'lucide-react';
+import { Mail, MapPin, Share2, ArrowRight, ArrowUp, Check } from 'lucide-react';
 
 export function Contact() {
   return (
@@ -23,21 +23,14 @@ export function Contact() {
               <Mail className="w-12 h-12 text-primary mb-auto group-hover:scale-110 transition-transform origin-left" />
               <div className="mt-8 sm:mt-10 md:mt-12">
                 <span className="font-mono text-[11px] text-text-muted uppercase tracking-[0.3em] block mb-4 font-bold">CHANNEL_01 // EMAIL</span>
-                <span className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-text-main group-hover:text-primary transition-colors break-all">hello@minddeas.com</span>
-              </div>
-            </div>
-            <div className="p-8 sm:p-10 md:p-12 lg:p-16 border-b md:border-b-0 border-border-main flex flex-col min-h-[220px] sm:min-h-[260px] md:min-h-[300px] group hover:bg-bg-light transition-all duration-500">
-              <Phone className="w-12 h-12 text-primary mb-auto group-hover:scale-110 transition-transform origin-left" />
-              <div className="mt-8 sm:mt-10 md:mt-12">
-                <span className="font-mono text-[11px] text-text-muted uppercase tracking-[0.3em] block mb-4 font-bold">CHANNEL_02 // VOICE</span>
-                <span className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-text-main group-hover:text-primary transition-colors">+55 11 99999-9999</span>
+                <span className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-text-main group-hover:text-primary transition-colors break-all">geral@minddeas.com</span>
               </div>
             </div>
             <div className="p-8 sm:p-10 md:p-12 lg:p-16 border-t border-b md:border-b-0 md:border-r border-border-main flex flex-col min-h-[220px] sm:min-h-[260px] md:min-h-[300px] group hover:bg-bg-light transition-all duration-500">
               <MapPin className="w-12 h-12 text-primary mb-auto group-hover:scale-110 transition-transform origin-left" />
               <div className="mt-8 sm:mt-10 md:mt-12">
                 <span className="font-mono text-[11px] text-text-muted uppercase tracking-[0.3em] block mb-4 font-bold">BASE_01 // LOCATION</span>
-                <span className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-text-main group-hover:text-primary transition-colors break-words">São Paulo, SP - Brazil</span>
+                <span className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-text-main group-hover:text-primary transition-colors break-words">Lisbon, Portugal</span>
               </div>
             </div>
             <div className="p-8 sm:p-10 md:p-12 lg:p-16 border-t border-border-main flex flex-col min-h-[220px] sm:min-h-[260px] md:min-h-[300px] group hover:bg-bg-light transition-all duration-500">
@@ -45,8 +38,7 @@ export function Contact() {
               <div className="mt-8 sm:mt-10 md:mt-12">
                 <span className="font-mono text-[11px] text-text-muted uppercase tracking-[0.3em] block mb-4 font-bold">NETWORK // SOCIAL</span>
                 <div className="flex flex-wrap gap-4 sm:gap-6 lg:gap-8">
-                  <span className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-text-main hover:text-primary cursor-pointer transition-colors">LinkedIn</span>
-                  <span className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-text-main hover:text-primary cursor-pointer transition-colors">Instagram</span>
+                  <a href="https://www.linkedin.com/company/minddeas/" target="_blank" rel="noopener noreferrer" className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-text-main hover:text-primary cursor-pointer transition-colors">LinkedIn</a>
                 </div>
               </div>
             </div>
