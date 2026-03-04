@@ -1,6 +1,9 @@
+import { useForm } from '@formspree/react';
 import { Mail, Calendar, MapPin, Share2, ArrowRight, ArrowUp, Check } from 'lucide-react';
 
 export function Contact() {
+  const [state, handleSubmit] = useForm('contactForm');
+
   return (
     <section id="contact" className="w-full flex flex-col bg-bg-light">
       <div className="flex flex-col lg:flex-row w-full border-b border-border-main min-h-[760px]">
@@ -53,48 +56,62 @@ export function Contact() {
         </div>
 
         <div className="w-full lg:w-1/2 p-6 sm:p-10 md:p-16 lg:p-24 xl:p-32 bg-white flex flex-col justify-center">
-          <form className="flex flex-col gap-12 max-w-4xl w-full mx-auto" onSubmit={(e) => e.preventDefault()}>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-12 max-w-4xl w-full mx-auto"
+          >
+            <input type="hidden" name="_subject" value="Novo contacto - Minddeas" />
             <div className="flex flex-col gap-4">
-              <label className="font-mono text-[12px] font-bold text-text-main uppercase tracking-[0.2em]">[01] FULL_NAME</label>
-              <input type="text" placeholder="TYPE_HERE_" className="w-full h-14 sm:h-16 md:h-20 border border-border-main bg-transparent px-4 sm:px-6 md:px-8 font-mono text-base md:text-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:opacity-20" />
+              <label htmlFor="fullName" className="font-mono text-[12px] font-bold text-text-main uppercase tracking-[0.2em]">[01] FULL_NAME</label>
+              <input id="fullName" type="text" name="fullName" placeholder="TYPE_HERE_" required className="w-full h-14 sm:h-16 md:h-20 border border-border-main bg-transparent px-4 sm:px-6 md:px-8 font-mono text-base md:text-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:opacity-20" />
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="flex flex-col gap-4">
-                <label className="font-mono text-[12px] font-bold text-text-main uppercase tracking-[0.2em]">[02] COMPANY</label>
-                <input type="text" placeholder="CORP_NAME" className="w-full h-14 sm:h-16 md:h-20 border border-border-main bg-transparent px-4 sm:px-6 md:px-8 font-mono text-base md:text-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:opacity-20" />
+                <label htmlFor="company" className="font-mono text-[12px] font-bold text-text-main uppercase tracking-[0.2em]">[02] COMPANY</label>
+                <input id="company" type="text" name="company" placeholder="CORP_NAME" className="w-full h-14 sm:h-16 md:h-20 border border-border-main bg-transparent px-4 sm:px-6 md:px-8 font-mono text-base md:text-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:opacity-20" />
               </div>
               <div className="flex flex-col gap-4">
-                <label className="font-mono text-[12px] font-bold text-text-main uppercase tracking-[0.2em]">[03] POSITION</label>
-                <input type="text" placeholder="YOUR_POSITION" className="w-full h-14 sm:h-16 md:h-20 border border-border-main bg-transparent px-4 sm:px-6 md:px-8 font-mono text-base md:text-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:opacity-20" />
+                <label htmlFor="position" className="font-mono text-[12px] font-bold text-text-main uppercase tracking-[0.2em]">[03] POSITION</label>
+                <input id="position" type="text" name="position" placeholder="YOUR_POSITION" className="w-full h-14 sm:h-16 md:h-20 border border-border-main bg-transparent px-4 sm:px-6 md:px-8 font-mono text-base md:text-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:opacity-20" />
               </div>
             </div>
 
             <div className="flex flex-col gap-4">
-              <label className="font-mono text-[12px] font-bold text-text-main uppercase tracking-[0.2em]">[04] EMAIL_ADDRESS</label>
-              <input type="email" placeholder="USER@DOMAIN.COM" className="w-full h-14 sm:h-16 md:h-20 border border-border-main bg-transparent px-4 sm:px-6 md:px-8 font-mono text-base md:text-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:opacity-20" />
+              <label htmlFor="email" className="font-mono text-[12px] font-bold text-text-main uppercase tracking-[0.2em]">[04] EMAIL_ADDRESS</label>
+              <input id="email" type="email" name="email" placeholder="USER@DOMAIN.COM" required className="w-full h-14 sm:h-16 md:h-20 border border-border-main bg-transparent px-4 sm:px-6 md:px-8 font-mono text-base md:text-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:opacity-20" />
             </div>
 
             <div className="flex flex-col gap-4">
               <div className="flex justify-between items-end">
-                <label className="font-mono text-[12px] font-bold text-text-main uppercase tracking-[0.2em]">[05] MAIN_CHALLENGE</label>
+                <label htmlFor="mainChallenge" className="font-mono text-[12px] font-bold text-text-main uppercase tracking-[0.2em]">[05] MAIN_CHALLENGE</label>
                 <span className="font-mono text-[10px] text-text-muted uppercase tracking-widest opacity-50 font-bold">MAX_500_CHARS</span>
               </div>
-              <textarea placeholder="DESCRIBE_THE_CURRENT_PROJECT_SCENARIO..." className="w-full h-44 sm:h-48 md:h-56 border border-border-main bg-transparent p-4 sm:p-6 md:p-8 font-mono text-base md:text-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none placeholder:opacity-20"></textarea>
+              <textarea id="mainChallenge" name="mainChallenge" placeholder="DESCRIBE_THE_CURRENT_PROJECT_SCENARIO..." maxLength={500} className="w-full h-44 sm:h-48 md:h-56 border border-border-main bg-transparent p-4 sm:p-6 md:p-8 font-mono text-base md:text-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none placeholder:opacity-20"></textarea>
             </div>
 
             <div className="flex items-start gap-6 group cursor-pointer">
               <div className="relative flex items-center mt-1">
-                <input type="checkbox" className="peer appearance-none w-8 h-8 border border-border-main rounded-none checked:bg-primary checked:border-primary transition-all cursor-pointer" />
+                <input id="newsletter" type="checkbox" name="newsletter" value="yes" className="peer appearance-none w-8 h-8 border border-border-main rounded-none checked:bg-primary checked:border-primary transition-all cursor-pointer" />
                 <Check className="absolute w-6 h-6 text-white opacity-0 peer-checked:opacity-100 left-1 transition-opacity pointer-events-none" />
               </div>
-              <span className="font-body text-lg lg:text-xl text-text-muted leading-snug select-none cursor-pointer group-hover:text-text-main transition-colors font-medium">I agree to receive occasional market intelligence reports.</span>
+              <label htmlFor="newsletter" className="font-body text-lg lg:text-xl text-text-muted leading-snug select-none cursor-pointer group-hover:text-text-main transition-colors font-medium">I agree to receive occasional market intelligence reports.</label>
             </div>
 
-            <button className="w-full bg-primary text-white h-16 sm:h-20 md:h-24 font-display font-bold text-base sm:text-xl lg:text-3xl uppercase tracking-[0.12em] sm:tracking-[0.2em] lg:tracking-[0.4em] flex items-center justify-center gap-3 sm:gap-4 md:gap-6 hover:bg-text-main transition-all duration-500 mt-6 shadow-2xl shadow-primary/10">
-              <span className="break-words text-center">TRANSMIT_DATA</span>
+            <button type="submit" disabled={state.submitting} className="w-full bg-primary text-white h-16 sm:h-20 md:h-24 font-display font-bold text-base sm:text-xl lg:text-3xl uppercase tracking-[0.12em] sm:tracking-[0.2em] lg:tracking-[0.4em] flex items-center justify-center gap-3 sm:gap-4 md:gap-6 hover:bg-text-main transition-all duration-500 mt-6 shadow-2xl shadow-primary/10 disabled:opacity-70 disabled:cursor-not-allowed">
+              <span className="break-words text-center">{state.submitting ? 'TRANSMITTING...' : 'TRANSMIT_DATA'}</span>
               <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 shrink-0" />
             </button>
+            {state.succeeded && (
+              <p className="font-mono text-sm text-primary font-bold uppercase tracking-widest text-center -mt-6">
+                TRANSMISSION_SUCCESSFUL // THANK_YOU
+              </p>
+            )}
+            {state.errors?.length ? (
+              <p className="font-mono text-sm text-red-600 font-bold uppercase tracking-widest text-center -mt-6">
+                TRANSMISSION_FAILED // TRY_AGAIN
+              </p>
+            ) : null}
 
             <div className="w-full border-t border-dashed border-border-main pt-10 mt-10 text-center">
               <span className="font-mono text-[10px] sm:text-[12px] text-text-muted uppercase tracking-[0.12em] sm:tracking-[0.25em] md:tracking-[0.4em] font-bold opacity-40 break-words">
