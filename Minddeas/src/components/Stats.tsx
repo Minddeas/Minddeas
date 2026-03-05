@@ -2,26 +2,26 @@ import { motion } from 'motion/react';
 
 export function Stats() {
   return (
-    <section className="flex flex-col w-full border-b border-border-main bg-white">
+    <section id="services" className="flex flex-col w-full border-b border-border-main bg-white">
       <div className="flex flex-col md:flex-row w-full md:border-b border-border-main">
-        <div className="w-full md:w-1/2 p-6 sm:p-8 md:p-16 lg:p-24 xl:p-32 md:border-r border-border-main bg-white relative">
-          <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-16 md:right-16 text-primary opacity-30">
+        <div className="w-full md:w-1/2 p-6 sm:p-8 md:p-12 lg:p-14 xl:p-16 md:border-r border-border-main bg-white relative">
+          <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-10 md:right-10 text-primary opacity-25">
             <svg width="64" height="64" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20 0V40M0 20H40" stroke="currentColor" strokeWidth="0.5"/>
               <rect x="10" y="10" width="20" height="20" stroke="currentColor" strokeWidth="0.5"/>
             </svg>
           </div>
-          <span className="font-mono text-[12px] text-primary uppercase tracking-[0.3em] mb-10 block font-bold">01 // MISSION</span>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl uppercase leading-[0.9] md:leading-[0.85] tracking-tight text-text-main mb-10 sm:mb-12 md:mb-16 break-words">
+          <span className="font-mono text-[11px] text-primary uppercase tracking-[0.28em] mb-8 block font-bold">01 // MISSION</span>
+          <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl uppercase leading-[0.92] tracking-tight text-text-main mb-8 sm:mb-10 md:mb-12 break-words">
             WE <br/> ORGANIZE <br/> <span className="text-primary">CHAOS.</span>
           </h2>
-          <p className="font-body text-base sm:text-lg md:text-2xl lg:text-3xl text-text-main/80 border-l-2 border-primary pl-4 sm:pl-6 md:pl-10 max-w-2xl leading-relaxed">
+          <p className="font-body text-base sm:text-lg md:text-xl lg:text-2xl text-text-main/80 border-l-2 border-primary pl-4 sm:pl-6 md:pl-8 max-w-2xl leading-relaxed">
             Data-driven business consulting, not guesswork. A technical, cold, and surgical approach to ensure your business success through logical architecture.
           </p>
         </div>
-        <div className="w-full md:w-1/2 flex items-center justify-center p-6 sm:p-10 md:p-12 bg-bg-light relative overflow-hidden min-h-[360px] sm:min-h-[460px] md:min-h-[500px]">
+        <div className="w-full md:w-1/2 flex items-center justify-center p-5 sm:p-6 md:p-8 bg-bg-light relative overflow-hidden min-h-[220px] sm:min-h-[280px] md:min-h-[340px]">
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-          <div className="relative w-full max-w-[480px] aspect-square">
+          <div className="relative w-full max-w-[220px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[360px] aspect-square">
             <motion.div 
               initial="disorganized"
               whileInView="organized"
