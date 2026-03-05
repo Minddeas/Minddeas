@@ -1,4 +1,3 @@
-import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function Stats() {
@@ -88,14 +87,6 @@ export function Stats() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="w-full flex flex-col md:flex-row justify-between items-center px-6 sm:px-10 md:px-16 py-8 md:py-10 bg-bg-light gap-4 md:gap-0">
-        <span className="font-mono text-[11px] md:text-[12px] text-text-muted uppercase tracking-[0.15em] md:tracking-widest mb-0 font-bold opacity-60 text-center md:text-left break-words">
-          DATA ARCHITECTURE V2.0.4 // MINDDEAS CORE
-        </span>
-        <button className="font-display font-bold text-[11px] sm:text-[12px] uppercase tracking-[0.12em] sm:tracking-[0.2em] md:tracking-[0.3em] text-text-main flex items-center gap-3 md:gap-4 hover:text-primary transition-all group text-center">
-          VIEW FULL MANIFESTO <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-        </button>
       </div>
     </section>
   );

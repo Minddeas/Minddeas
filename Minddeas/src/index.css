@@ -17,6 +17,22 @@
   body {
     @apply bg-bg-light text-text-main font-body;
   }
+
+  section[id] {
+    scroll-margin-top: 90px;
+  }
+
+  @media (max-width: 640px) {
+    section[id] {
+      scroll-margin-top: 84px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    section[id] {
+      scroll-margin-top: 78px;
+    }
+  }
 }
 
 .bg-grid-pattern {

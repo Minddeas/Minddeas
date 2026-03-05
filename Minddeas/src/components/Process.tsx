@@ -58,12 +58,12 @@ export function Process() {
               <span className="font-mono text-[12px] font-bold text-text-muted group-hover/col:text-primary transition-colors tracking-[0.3em] uppercase">STEP_{step.id}</span>
               <ArrowRight className="w-8 h-8 text-primary opacity-0 -translate-x-6 transition-all duration-500 group-hover/col:opacity-100 group-hover/col:translate-x-0" />
             </div>
-            
+
             <h3 className="mt-4 sm:mt-6 font-display text-3xl sm:text-4xl lg:text-5xl font-bold uppercase text-text-main leading-none break-words">
               <span className="block text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4 opacity-10 group-hover/col:opacity-100 transition-all duration-500" style={{ WebkitTextStroke: '1px var(--color-text-main)' }}>{step.id}</span>
               {step.title}
             </h3>
-            
+
             <div className="relative z-10 my-auto flex items-center justify-center py-12 sm:py-16 lg:py-0">
               <div className="relative flex w-24 h-24 sm:w-28 sm:h-28 lg:w-36 lg:h-36 items-center justify-center border border-text-main/20 bg-white transition-all duration-700 group-hover/col:border-primary group-hover/col:bg-primary group-hover/col:scale-110 shadow-2xl group-hover/col:shadow-primary/30 group-hover/col:rotate-[360deg]">
                 <step.icon className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-text-main transition-colors duration-700 group-hover/col:text-white" />
@@ -84,17 +84,6 @@ export function Process() {
         ))}
       </div>
 
-      <div className="w-full flex flex-col md:flex-row justify-between items-center px-6 sm:px-10 md:px-16 py-8 md:py-10 bg-bg-light gap-4 md:gap-0">
-        <span className="font-mono text-[11px] md:text-[12px] text-text-muted uppercase tracking-[0.15em] md:tracking-widest mb-0 font-bold opacity-60 text-center md:text-left break-words">
-          COMMUNICATION NODE ACTIVE // READY FOR INPUT
-        </span>
-        <button 
-          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          className="font-display font-bold text-[11px] sm:text-[12px] uppercase tracking-[0.12em] sm:tracking-[0.2em] md:tracking-[0.3em] text-text-main flex items-center gap-3 md:gap-4 hover:text-primary transition-all group text-center"
-        >
-          INITIATE CONTACT <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-        </button>
-      </div>
     </section>
   );
 }

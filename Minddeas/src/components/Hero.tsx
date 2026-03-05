@@ -41,11 +41,11 @@ export function Hero() {
           <span className="text-primary font-bold">STATUS: ONLINE</span>
         </div>
       </div>
-      
+
       <div className="w-full md:w-[45%] bg-bg-light relative flex items-center justify-center min-h-[420px] sm:min-h-[500px] md:min-h-auto overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="relative w-full h-full p-6 sm:p-10 md:p-16 lg:p-20 flex items-center justify-center">
-          <motion.div 
+          <motion.div
             style={{ y: scrollY, opacity }}
             className="relative w-full max-w-[480px] aspect-square"
           >
@@ -53,34 +53,34 @@ export function Hero() {
               const size = 60 + Math.random() * 40;
               const isPrimary = i % 3 === 0;
               const isGray = i % 3 === 1;
-              
+
               return (
                 <motion.div
                   key={i}
-                  initial={{ 
-                    opacity: 0, 
+                  initial={{
+                    opacity: 0,
                     scale: 0,
                     x: Math.random() * 400 - 200,
                     y: Math.random() * 400 - 200,
                     rotate: Math.random() * 360
                   }}
-                  animate={{ 
-                    opacity: 0.6, 
+                  animate={{
+                    opacity: 0.6,
                     scale: 1,
                     x: [Math.random() * 400 - 200, Math.random() * 400 - 200, Math.random() * 400 - 200],
                     y: [Math.random() * 400 - 200, Math.random() * 400 - 200, Math.random() * 400 - 200],
                     rotate: [Math.random() * 360, Math.random() * 360, Math.random() * 360],
                   }}
-                  transition={{ 
+                  transition={{
                     opacity: { duration: 1 },
                     scale: { duration: 1 },
                     x: { duration: 20 + Math.random() * 20, repeat: Infinity, ease: "linear" },
                     y: { duration: 20 + Math.random() * 20, repeat: Infinity, ease: "linear" },
                     rotate: { duration: 20 + Math.random() * 20, repeat: Infinity, ease: "linear" },
                   }}
-                  whileHover={{ 
-                    scale: 1.2, 
-                    opacity: 1, 
+                  whileHover={{
+                    scale: 1.2,
+                    opacity: 1,
                     zIndex: 20,
                     backgroundColor: isPrimary ? 'rgba(244, 162, 32, 1)' : 'rgba(255, 255, 255, 1)'
                   }}
