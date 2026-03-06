@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Mail, Calendar, MapPin, Share2, ArrowRight, ArrowUp, Check } from 'lucide-react';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/p/2949986910493211753/f/contactForm';
+const BOOKING_URL = 'mailto:geral@minddeas.com?subject=Book%20a%20session';
 
 export function Contact() {
   const [showSuccess, setShowSuccess] = useState(false);
@@ -38,13 +39,18 @@ export function Contact() {
                 <span className="font-display font-bold text-lg sm:text-xl lg:text-2xl text-text-main group-hover:text-primary transition-colors break-all">geral@minddeas.com</span>
               </div>
             </div>
-            <a href="#" className="p-5 sm:p-6 md:p-7 lg:p-8 border-b md:border-b-0 border-border-main flex flex-col min-h-[150px] sm:min-h-[170px] md:min-h-[185px] group hover:bg-bg-light transition-all duration-500">
+            <div className="p-5 sm:p-6 md:p-7 lg:p-8 border-b md:border-b-0 border-border-main flex flex-col min-h-[150px] sm:min-h-[170px] md:min-h-[185px] group hover:bg-bg-light transition-all duration-500">
               <Calendar className="w-9 h-9 text-primary mb-auto group-hover:scale-105 transition-transform origin-left" />
               <div className="mt-6 sm:mt-7 md:mt-8">
                 <span className="font-mono text-[11px] text-text-muted uppercase tracking-[0.3em] block mb-4 font-bold">SCHEDULING</span>
-                <span className="font-display font-bold text-lg sm:text-xl lg:text-2xl text-text-main group-hover:text-primary transition-colors">Book a session</span>
+                <a
+                  href={BOOKING_URL}
+                  className="font-display font-bold text-lg sm:text-xl lg:text-2xl text-text-main group-hover:text-primary transition-colors inline-flex w-fit"
+                >
+                  Book a session
+                </a>
               </div>
-            </a>
+            </div>
             <div className="p-5 sm:p-6 md:p-7 lg:p-8 border-t border-b md:border-b-0 md:border-r border-border-main flex flex-col min-h-[150px] sm:min-h-[170px] md:min-h-[185px] group hover:bg-bg-light transition-all duration-500">
               <MapPin className="w-9 h-9 text-primary mb-auto group-hover:scale-105 transition-transform origin-left" />
               <div className="mt-6 sm:mt-7 md:mt-8">
@@ -52,15 +58,21 @@ export function Contact() {
                 <span className="font-display font-bold text-lg sm:text-xl lg:text-2xl text-text-main group-hover:text-primary transition-colors break-words">Lisbon, Portugal</span>
               </div>
             </div>
-            <div className="p-5 sm:p-6 md:p-7 lg:p-8 border-t border-border-main flex flex-col min-h-[150px] sm:min-h-[170px] md:min-h-[185px] group hover:bg-bg-light transition-all duration-500">
+            <a
+              href="https://www.linkedin.com/company/minddeas/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-5 sm:p-6 md:p-7 lg:p-8 border-t border-border-main flex flex-col min-h-[150px] sm:min-h-[170px] md:min-h-[185px] group hover:bg-bg-light transition-all duration-500 cursor-pointer"
+              aria-label="Open Minddeas LinkedIn"
+            >
               <Share2 className="w-9 h-9 text-primary mb-auto group-hover:scale-105 transition-transform origin-left" />
               <div className="mt-6 sm:mt-7 md:mt-8">
                 <span className="font-mono text-[11px] text-text-muted uppercase tracking-[0.3em] block mb-4 font-bold">SOCIAL</span>
                 <div className="flex flex-wrap gap-4 sm:gap-6 lg:gap-8">
-                  <a href="https://www.linkedin.com/company/minddeas/" target="_blank" rel="noopener noreferrer" className="font-display font-bold text-lg sm:text-xl lg:text-2xl text-text-main hover:text-primary cursor-pointer transition-colors">LinkedIn</a>
+                  <span className="font-display font-bold text-lg sm:text-xl lg:text-2xl text-text-main group-hover:text-primary transition-colors">LinkedIn</span>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
